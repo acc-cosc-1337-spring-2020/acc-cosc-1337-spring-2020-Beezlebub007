@@ -14,7 +14,7 @@ int main()
 	double hours;
 	double hourly_rate;
 	//Prompt user for keyboard input for hours and hourly_rate
-	cout << "Input Hours:";
+	cout << "Inpuy Hours:";
 	cin >> hours;
 	cout << "Input Hourly Rate";
 	cin >> hourly_rate;
