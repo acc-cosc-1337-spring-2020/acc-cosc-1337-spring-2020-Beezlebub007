@@ -25,7 +25,7 @@ int main()
 	//Call the gross_pay function and save its return value to the gross_salary variable
 	gross_salary = gross_pay(hours , hourly_rate);
 	//Display the gross_salary variable as follows:
-	cout << gross_salary;
+	cout << "Gross rate: " << gross_salary;
 	//Example ---->>>     Gross pay: 150.00   
 	return 0;
 }
