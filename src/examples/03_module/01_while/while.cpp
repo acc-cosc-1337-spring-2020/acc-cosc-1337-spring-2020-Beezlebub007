@@ -12,7 +12,7 @@ int sum_of_squares(int num)
 	while (num >= counter)
 	{
 		sum = sum + counter * counter;
-		counter = counter + 1;
+
 	}
 
 	return sum;

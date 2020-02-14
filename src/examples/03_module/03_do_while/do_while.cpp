@@ -14,7 +14,7 @@ void prompt_user()
 		int num;
 		cout << "Enter a number: ";
 		cin >> num;
-		cout << sum_of_squares(num) << "\n\n\n\n";
+		cout << sum_of_squares(num) << "\n\n";
 		cout << "Continue? ";
 		cin >> choice;
 	} while (choice == 1);
