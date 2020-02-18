@@ -8,12 +8,42 @@ Return quotient.
 */
 
 
+double get_gc_content(const string& dna)
+{
+	int count = 0;
+	double gc_content= 0;
+	double numofdna = dna.length();
+	for (unsigned int i = 0; i < dna.length(); i++)
+	{
+		if (dna.at(i) == 'G')
+		{
+			count++;
+		}
+		else if (dna.at(i) == 'C')
+		{
+			count++;
+		}
 
+	}
+	gc_content = (count / numofdna);
+	
+	return gc_content;
+}
 
 /*
 Write code for function get_reverse_string that
 accepts a string parameter and returns a string reversed.
 */
+string get_reverse_string(string dna)
+{
+	string x;
+	for ( int i = dna.length() - 1; i >= 0 ; --i)
+	{
+		x = x + dna[i];
+	}
+	return(x);
+}
+
 
 
 
@@ -28,3 +58,7 @@ c. return string
 
 */
 
+string get_dna_complement(string dna)
+{
+	return string();
+}
