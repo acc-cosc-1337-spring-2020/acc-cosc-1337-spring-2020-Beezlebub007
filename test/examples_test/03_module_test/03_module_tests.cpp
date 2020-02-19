@@ -4,6 +4,7 @@
 #include "value_ref.h"
 #include "for_ranged.h"
 #include <string>
+#include"vec.h"
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
@@ -38,4 +39,22 @@ TEST_CASE("loop by ref")
 
 	loop_string_w_auto_ref(name);
 	REQUIRE(name == "zzz");
+}
+TEST_CASE("test for ranged loop w auto by value")
+{
+	std::vector<int> nums{ 9, 10, 99, 5, 67 };
+	std::vector<int> expected{ 9, 10, 99, 5, 67 };
+
+	loop_vector_w_auto(nums);
+
+	REQUIRE(nums == expected);
+}
+TEST_CASE("test for ranged loop w auto by ref")
+{
+	std::vector<int> nums{ 9, 10, 99, 5, 67 };
+	std::vector<int> expected{ 0, 0, 0, 0, 0 };
+
+	loop_vector_w_auto_ref(nums);
+
+	REQUIRE(nums == expected);
 }
