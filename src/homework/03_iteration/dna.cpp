@@ -60,5 +60,26 @@ c. return string
 
 string get_dna_complement(string dna)
 {
-	return string();
+	string dnax = get_reverse_string(dna);
+	
+	for (int i = 0; i < dnax.length(); ++i)
+	{
+		if (dnax[i] == 'A')
+		{
+			dnax[i] = 'T';
+		}
+		else if (dnax[i] == 'T')
+		{
+			dnax[i] = 'A';
+		}
+		else if (dnax[i] == 'C')
+		{
+			dnax[i] = 'G';
+		}
+		else if (dnax[i] == 'G')
+		{
+			dnax[i] = 'C';
+		}
+	}	
+	return (dnax);
 }
