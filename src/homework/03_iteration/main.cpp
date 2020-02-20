@@ -36,6 +36,8 @@ int main()
 			cin >> dna;
 			cout << "DNA complement is: " << get_dna_complement(dna) << "\n";
 			break;
+		default:
+			cout << "invalid input"<< "\n";
 		}
 		cout << "continue? Y or N.";
 		cin >> x;
