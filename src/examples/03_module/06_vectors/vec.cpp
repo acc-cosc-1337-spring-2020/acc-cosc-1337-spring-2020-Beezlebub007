@@ -47,7 +47,7 @@ The function creates an int vector with values 9, 10, 99, 5, 67
 and displays the numbers to screen using an indexed for loop as follows : 9 10 99 5  67
 */
 
-void loop_vector_w_index_ref_const(std::vector<int>& nums)
+void loop_vector_w_index_ref_const(const std::vector<int>& nums)
 {
 	for (int i = 0; i < nums.size(); ++i)
 	{
