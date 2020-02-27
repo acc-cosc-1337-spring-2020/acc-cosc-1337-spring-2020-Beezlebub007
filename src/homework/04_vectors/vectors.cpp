@@ -17,7 +17,7 @@ int get_max_from_vector(const vector<int>& num)
 			max = num[i];
 		}
 	}
-	cout << max;
+	
 	return int(max);
 }
 
