@@ -64,6 +64,15 @@ number is prime.
 */
 vector<int> vector_of_primes(int num)
 {
-	return vector<int>();
+	vector<int> prime;
+	for (int i = 2; i <= num; i++)
+	{
+		if (is_prime(i))
+		{
+			prime.push_back(i);
+		}
+	}
+	return vector<int>(prime);
 }
+
 

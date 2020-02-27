@@ -24,3 +24,11 @@ TEST_CASE("test is prime")
 	REQUIRE(is_prime(43) == true);
 	REQUIRE(is_prime(59) == true);
 }
+
+TEST_CASE("test vector of primes")
+{
+	std::vector<int> num{ 2,3,5,7};
+	REQUIRE(vector_of_primes(10) == num);
+	std::vector<int> num2{ 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47 };
+	REQUIRE(vector_of_primes(50) == num2);
+}
