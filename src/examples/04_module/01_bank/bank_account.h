@@ -1,4 +1,5 @@
-//bank_account.h
+//bank_account
+#include <string>
 class BankAccount
 {
 public:												//avainlable to anyone
@@ -8,4 +9,13 @@ public:												//avainlable to anyone
 	void withdraw(int amount);
 private:											//safegaurds variables from outside changes
 	int balance;
+};
+
+class Invalid
+{
+public:
+	Invalid(std::string msg) : message{ msg } {}
+	std::string get_error()const { return message; }
+private:
+	std::string message;
 };
