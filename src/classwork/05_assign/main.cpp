@@ -15,12 +15,14 @@ Iterate the vector and display the Area for each Rectangle on one line and the t
 */
 int main()
 {
+	auto total{0};
 	std::vector<Rect> width, height{ Rect(4, 5), Rect(10,10), Rect(100,10) };
 	for (auto a : width, height)
 	{
 		cout << a.get_area() << "\n";
+		total = a.get_area() + total;
 	}
-	
+	cout << total;
 	
 	return 0;
 }

@@ -8,6 +8,7 @@ class Rect
 public:
 	Rect(int h, int w) : width{ w }, height{ h }{calculate_area();}
 	int get_area() const { return area; }
+
 private:
 	int area;
 	int width;
