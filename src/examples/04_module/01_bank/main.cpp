@@ -4,7 +4,8 @@ using std::cout;using std::cin;
 
 int main()
 {
-
+	BankAccount a (100);		//explicitly calling constructor
+	cout << a.get_balance();
 	BankAccount account(500);
 
 	auto balance = account.get_balance();
