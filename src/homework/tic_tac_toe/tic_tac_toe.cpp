@@ -1,6 +1,6 @@
 #include "tic_tac_toe.h"
 #include<string>
-#include<stdlib.h>
+#include<iostream>
 //cpp
 
 void tictactoe::set_next_player()
@@ -16,26 +16,28 @@ void tictactoe::set_next_player()
 }
 void tictactoe::start_game(string first_player)
 {
-	player == first_player;
-	if (player != "O" || player != "X")
+	if (first_player == "X" || first_player == "O")
 	{
-		throw Error("Player must be X or O");
-	}
-}
-void tictactoe::mark_board(int position)
-{
-	start_game();
-	if (position = rand() % 9 + 1)
-	{
-		set_next_player();
-	}
-	else if (position != rand() % 9 + 1)
-	{
-		throw Error("Number must be Between 1 and 9");
+		player = first_player;
 	}
 	else
 	{
-		throw Error("Must start game first");
+		throw Error("Player must be X or O");
 	}
 
+		
+	
+}
+void tictactoe::mark_board(int position)
+{
+	
+	if (position< 1 || position>9)
+	{
+		throw Error("Number must be Between 1 and 9");
+	}
+	if (player.empty())
+	{
+		throw Error("Need to start game first");
+	}
+	set_next_player();
 }
