@@ -4,10 +4,12 @@ using std::cout;using std::cin;
 
 int main()
 {
-	BankAccount a (100);		//explicitly calling constructor
-	cout << a.get_balance();
-	BankAccount account(500);
-
+	BankAccount a (100);						//explicitly calling constructor
+	cout << a.get_balance() << "\n";
+	BankAccount account(500), act1;
+	cin >> account;								//
+	cout << account << "\n";
+	display_balance(account);
 	auto balance = account.get_balance();
 	cout << "Balance is: " << balance;
 

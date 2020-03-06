@@ -11,7 +11,7 @@ TEST_CASE("Test can’t call mark board before start game")
 {
 
 	tictactoe game;
-	REQUIRE_THROWS_AS(game.mark_board(10), Error);
+	REQUIRE_THROWS_AS(game.mark_board(1), Error);
 
 }
 TEST_CASE("Test start game accepts only X or O")
