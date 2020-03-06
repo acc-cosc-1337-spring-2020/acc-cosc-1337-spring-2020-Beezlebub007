@@ -16,7 +16,7 @@ void Rect::calculate_area()
 std::ostream & operator<<(std::ostream & out, const Rect & a)
 {
 
-	out << "Area of rectangle is: "<<a.get_area;
+	out << "Area of rectangle is: "<<a.area;
 	return out;
 }
 
