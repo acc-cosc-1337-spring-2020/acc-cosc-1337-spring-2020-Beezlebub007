@@ -1,9 +1,12 @@
-#include "bank_account.h"
+#include "checking_account.h"
 #include<iostream>
 using std::cout;using std::cin;
 
 int main()
 {
+	CheckingAcount checking;
+	CheckingAcount checking1(90);
+
 	BankAccount a (100);						//explicitly calling constructor
 	cout << a.get_balance() << "\n";
 	BankAccount account(500), act1;

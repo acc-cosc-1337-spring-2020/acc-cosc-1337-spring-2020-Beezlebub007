@@ -1,6 +1,9 @@
 //bank_account
 #include <string>
 #include <iostream>
+
+#ifndef BANK_ACCOUNT_H															//header gaurds
+#define BANK_ACCOUNT_H
 class BankAccount
 {													
 public:																			//available to anyone
@@ -10,17 +13,25 @@ public:																			//available to anyone
 	void deposit (int amount);
 	void withdraw(int amount);
 	void open(int amount);
-	double get_rate() { return rate; }
+	double get_rate()const { return rate; }
 	friend void display_balance(const BankAccount& b);							//also considered a free function
 	friend std::ostream& operator<< (std::ostream & out, const BankAccount& b);	// Allows use of cout with class
 	friend std::istream& operator>>(std::istream& in, BankAccount& b);			// Allows use of cin with class
+
+
+protected:																		//gives access to derived classes but not main
+	int balance{ 0 };														
+
 private:																		//safegaurds variables from outside changes
-	int balance{0};
 	const int min_balance_to_open{ 25 };
 	static double rate;															//static variables only exist one time 
 	static double init_rate() { return .025; };
 };
 
+#endif
+
+#ifndef	INVALID_H
+#define INVALID_H
 class Invalid
 {
 public:
@@ -29,3 +40,5 @@ public:
 private:
 	std::string message;
 };
+
+#endif
