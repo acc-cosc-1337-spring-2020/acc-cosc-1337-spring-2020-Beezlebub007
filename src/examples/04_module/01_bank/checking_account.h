@@ -1,6 +1,6 @@
 //checking_account.h
 #include"bank_account.h"
-
+// derived class
 class CheckingAcount : public BankAccount											//allows CheckingAccount to inherit BankAccount class
 {
 public:

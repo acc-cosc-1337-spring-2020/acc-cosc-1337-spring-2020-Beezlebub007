@@ -1,7 +1,8 @@
 //bank_account
 #include <string>
 #include <iostream>
-
+#include <vector>
+// base class
 #ifndef BANK_ACCOUNT_H															//header gaurds
 #define BANK_ACCOUNT_H
 class BankAccount
@@ -9,7 +10,7 @@ class BankAccount
 public:																			//available to anyone
 	BankAccount() = default;													// Default constructor
 	explicit BankAccount(int b) : balance{b}{}									//empty {} is initialization of function. explicit means it needs to explicitly use a constructor to use 
-	int get_balance() const { return balance; }									//makes function unmodifiable
+	virtual int get_balance() const { return balance; }							// defers execution of base class							//makes function unmodifiable
 	void deposit (int amount);
 	void withdraw(int amount);
 	void open(int amount);
