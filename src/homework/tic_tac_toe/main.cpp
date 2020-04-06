@@ -1,24 +1,29 @@
 #include"tic_tac_toe.h"
 #include <iostream>
 using std::cout; using std::cin;
-int main() 
+int main()
 {
 	tictactoe start;
 	char choice;
 	string letter;
 	int mark;
 	auto player = start.get_player();
-	cout << "Player One select X or O " << "\n";
-	cin >> player;
-	
-	try
+
+
+	while (!(player == "O" || player == "X"))
 	{
-		start.start_game(player);
+		try
+		{
+			cout << "Player One select X or O " << "\n";
+			cin >> player;
+			start.start_game(player);
+		}
+		catch (Error e)
+		{
+			cout << e.get_error() << "\n";
+		}
 	}
-	catch (Error e)
-	{
-		cout << e.get_error() << "\n";
-	}
+
 	do
 	{ 
 		
