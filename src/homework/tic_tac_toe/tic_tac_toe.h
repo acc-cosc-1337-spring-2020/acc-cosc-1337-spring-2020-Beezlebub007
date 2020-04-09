@@ -1,3 +1,6 @@
+#ifndef TIC_TAC_TOE_H
+#define TIC_TAC_TOE_H
+
 #include<vector>
 #include <string>
 using std::string; using std::vector;
@@ -5,6 +8,7 @@ using std::string; using std::vector;
 class tictactoe 
 {
 public:
+	tictactoe() = default;
 	bool game_over();
 	void start_game(string first_player);
 	void mark_board(int position);
@@ -23,6 +27,12 @@ private:
 	vector<string>pegs{ 9," " };
 	string winner;
 };
+#endif // !tic_tac_toe_h
+
+#ifndef ERROR_H
+#define ERROR_H
+
+
 class Error
 {
 public:
@@ -31,3 +41,4 @@ public:
 private:
 	string message;
 };
+#endif // !ERROR_H

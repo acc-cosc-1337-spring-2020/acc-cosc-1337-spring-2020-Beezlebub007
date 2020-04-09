@@ -10,7 +10,7 @@ class BankAccount
 public:																			//available to anyone
 	BankAccount() = default;													// Default constructor
 	explicit BankAccount(int b) : balance{b}{}									//empty {} is initialization of function. explicit means it needs to explicitly use a constructor to use 
-	virtual int get_balance() const { return balance; }							// defers execution of base class							//makes function unmodifiable
+	virtual int get_balance() const = 0; 										// defers execution of base class							//makes function unmodifiable
 	void deposit (int amount);
 	void withdraw(int amount);
 	void open(int amount);

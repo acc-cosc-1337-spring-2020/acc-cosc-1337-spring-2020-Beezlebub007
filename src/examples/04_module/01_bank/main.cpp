@@ -1,5 +1,6 @@
 #include "checking_account.h"
 #include "savings_account.h"
+#include"customer.h"
 #include<iostream>
 #include<memory>
 using std::cout;using std::cin;
@@ -20,10 +21,19 @@ int main()
 	std::vector<unique_ptr<BankAccount >>accounts;
 	accounts.push_back(std::move(s));
 	accounts.push_back(std::move(c));
+
 	for (auto &act : accounts)
 	{
 		cout << act->get_balance() << "\n";  //derefences pointer
 	}
+
+	
+	/*
+	do yo want to play agin loop
+	ttt game;(needs too be in loop)
+	loop for mark board
+	game ends
+	call manager save game*/
 	/*
 	BankAccount a (100);						//explicitly calling constructor
 	cout << a.get_balance() << "\n";

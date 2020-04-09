@@ -23,11 +23,11 @@ void tictactoe::set_next_player()
 {
 	if (player == "X")
 	{
-		player = 'O';
+		player = "O";
 	}
 	else
 	{
-		player = 'X';
+		player = "X";
 	}
 }
 
@@ -128,7 +128,7 @@ bool tictactoe::check_row_win()
 	{
 		return true;
 	}
-	else if (pegs[6] == "0" && pegs[7] == "0" && pegs[8] == "0")
+	else if (pegs[6] == "O" && pegs[7] == "O" && pegs[8] == "O")
 	{
 		return true;
 	}
@@ -160,11 +160,11 @@ void tictactoe::set_winner()
 {
 	if (player == "X")
 	{
-		winner = 'O';
+		winner = "O";
 	}
 	else
 	{
-		winner = 'X';
+		winner = "X";
 	}
 }
 
@@ -178,7 +178,7 @@ bool tictactoe::game_over()
 	}
 	else if(check_board_full() == true)
 	{
-		winner = 'C';
+		winner = "C";
 		return true;
 	}
 	return check_board_full();
