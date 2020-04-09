@@ -26,8 +26,10 @@ void TicTacToeManager::update_winner_count(string winner)
 
 std::ostream & operator<<(std::ostream & out, const TicTacToeManager & manager)
 {
-	for (auto game : games)
+	for (auto& game : manager.games)
 	{
-		std::cout << game.get_winner() << "\n";
+		out << manager.get_winner();
 	}
+
+	return out;
 }

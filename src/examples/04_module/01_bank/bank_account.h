@@ -2,9 +2,10 @@
 #include <string>
 #include <iostream>
 #include <vector>
+
 // base class
 #ifndef BANK_ACCOUNT_H															//header gaurds
-#define BANK_ACCOUNT_H
+#define BANK_ACCOUNT_H															// helps keep track of how many times this has been used
 class BankAccount
 {													
 public:																			//available to anyone
