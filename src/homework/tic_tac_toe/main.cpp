@@ -33,6 +33,7 @@ int main()
 		}
 		do
 		{
+			winner.save_game(start);
 			cout << start;
 			cin >> start;
 			start.game_over();
@@ -41,9 +42,10 @@ int main()
 		{
 
 		}
+		winner.save_game(start);
 		cout << start;
-		
-		
+		start.get_winner();
+		cout << winner;
 		cout << "continue? Y or N.";
 		cin >> choice;
 		
@@ -52,8 +54,12 @@ int main()
 	{
 
 	}
+	cout << start;
+	start.get_winner();
 	cout << winner;
+
 	
+
 
 
 	return 0;
