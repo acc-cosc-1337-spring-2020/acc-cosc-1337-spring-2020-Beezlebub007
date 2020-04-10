@@ -47,13 +47,7 @@ void tictactoe::mark_board(int position)
 	set_next_player();
 }
 
-void tictactoe::display_board() const
-{
-	for (int i = 0; i < 9; i += 3)
-	{
-		cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2] << "\n";
-	}
-}
+
 
 
 bool tictactoe::check_board_full()
@@ -182,4 +176,32 @@ bool tictactoe::game_over()
 		return true;
 	}
 	return check_board_full();
+}
+
+std::istream & operator>>(std::istream & in, tictactoe & b)
+{
+
+	int mark;
+	cout << "Select position 1-9 " << "\n";
+	in >> mark;
+	try
+	{
+		b.mark_board(mark);
+	}
+	catch (Error f)
+	{
+		cout << f.get_error() << "\n";
+	}
+	// TODO: insert return statement here
+	return in;
+}
+
+std::ostream & operator<<(std::ostream & out, const tictactoe & t)
+{
+	for (int i = 0; i < 9; i += 3)
+	{
+		out << t.pegs[i] << "|" << t.pegs[i + 1] << "|" << t.pegs[i + 2] << "\n";
+		
+	}
+	return out;
 }

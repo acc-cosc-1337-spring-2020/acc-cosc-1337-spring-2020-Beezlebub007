@@ -3,6 +3,7 @@
 
 #include<vector>
 #include <string>
+#include<memory>
 using std::string; using std::vector;
 
 class tictactoe 
@@ -12,9 +13,10 @@ public:
 	bool game_over();
 	void start_game(string first_player);
 	void mark_board(int position);
-	void display_board()const;
 	string get_player() const { return player; }
 	string get_winner() const { return winner; }
+	friend std::istream& operator>>(std::istream& in, tictactoe& b);
+	friend std::ostream& operator<< (std::ostream & out, const tictactoe& t);
 private:
 	void set_next_player();
 	bool check_board_full();
