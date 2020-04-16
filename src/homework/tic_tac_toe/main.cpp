@@ -13,7 +13,7 @@ int main()
 	char choice;
 	string letter;
 	int mark;
-	auto player = start.get_player();
+	
 	int gamenum;
 	bool gamestate= true;
 	do
