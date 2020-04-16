@@ -7,10 +7,10 @@ class TicTacToeManager : public tictactoe
 {
 public:
 	TicTacToeManager() = default;
-	void save_game(const tictactoe b);
+	void save_game(tictactoe b);
 	friend std::ostream& operator<<(std::ostream & out, const TicTacToeManager & manager);
 private:
-	std::vector<tictactoe> games;
+	std::vector<std::reference_wrapper<tictactoe>> games;
 	int x_win{ 0 };
 	int o_win{ 0 };
 	int tie_win{ 0 };
