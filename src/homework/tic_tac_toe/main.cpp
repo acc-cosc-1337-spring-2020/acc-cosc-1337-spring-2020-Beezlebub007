@@ -15,7 +15,7 @@ int main()
 	do
 	{
 		int game_type;
-		cout << "\nTictactoe 3 or 4?";
+		cout << "\n Tictactoe 3 or 4?";
 		cin >> game_type;
 		tictactoe3 game3;
 		tictactoe4 game4;
@@ -71,7 +71,7 @@ int main()
 		cout << "Enter Y to play again: ";
 		cin >> cont;
 
-	} while (cont == "Y");
+	} while (cont == "Y"|| cont == "y");
 
 	cout << manager;
 
