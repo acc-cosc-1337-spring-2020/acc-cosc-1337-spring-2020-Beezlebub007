@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 
-class TicTacToeManager : public tictactoe
+class TicTacToeManager
 {
 public:
 	TicTacToeManager() = default;
