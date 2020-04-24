@@ -17,7 +17,7 @@ int main()
 	s = nullptr;*/
 
 	// c++ 11 
-	unique_ptr<BankAccount> s = make_unique<SavingsAccount>(90);  // needs default constructor to functio
+	unique_ptr<BankAccount> s = make_unique<SavingsAccount>(90);  // needs default constructor to function
 	unique_ptr<BankAccount> c = make_unique <CheckingAcount>(100); // heap variable or a pointer behind the scenes
 	
 	

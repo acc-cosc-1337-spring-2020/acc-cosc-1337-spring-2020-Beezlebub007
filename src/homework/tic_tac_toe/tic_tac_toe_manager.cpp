@@ -2,10 +2,10 @@
 
 //cpp
 
-void TicTacToeManager::save_game( tictactoe b)
+void TicTacToeManager::save_game(unique_ptr<tictactoe>& b)
 {
-	games.push_back(b);
-	update_winner_count(b.get_winner());
+	std::move(games);
+	update_winner_count(b->get_winner());
 }
 
 void TicTacToeManager::update_winner_count(string winner)
