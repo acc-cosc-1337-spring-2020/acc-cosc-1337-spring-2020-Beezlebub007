@@ -55,7 +55,7 @@ int main()
 			try
 			{
 				cin >> *game;
-				cout << game;
+				cout << *game;
 			}
 			catch (Error e)
 			{
