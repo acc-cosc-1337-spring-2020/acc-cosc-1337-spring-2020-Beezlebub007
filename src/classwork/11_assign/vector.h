@@ -6,17 +6,20 @@
 #define MY_VECTOR_H
 #include<cstddef>			//allows use for Mac OS
 #include<stddef.h>
-
+/*
+Rule of 3 -C++98
+*/
 class Vector
 {
 public:
 	Vector(size_t sz);
-	Vector(const Vector& v);  // copy constructor
+	Vector(const Vector& v);  // copy constructor - Rule of 3
+	Vector& operator=(const Vector& v); //copy assignment -Rule of 3
 	size_t Size()const { return size; }
 	//void set_size(size_t sz) { size = sz; }
 	int& operator[](int i) { return nums[i]; }
 	int& operator[](int i)const { return nums[i]; }
-	~Vector();					//destructor
+	~Vector();					//destructor - Rule of 3
 private:
 	size_t size;
 	int* nums; // raw array

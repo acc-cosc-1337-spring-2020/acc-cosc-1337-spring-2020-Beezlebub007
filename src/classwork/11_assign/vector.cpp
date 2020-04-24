@@ -11,6 +11,7 @@ Vector::Vector(size_t sz)
 	{
 		nums[i] = 0;
 	}
+
 }
 
 /*
@@ -26,6 +27,30 @@ Vector::Vector(const Vector & v)
 	{
 		nums[i] = v[i];
 	}
+}
+
+/*
+Allocate temporary dunamic array of size v(v1)
+Copy v1 elements to temp array
+Deallocate old v2 nums array
+Points v2 nums array to temp array
+Set v2 size to v1 size
+return a slef copy of Vector
+*/
+Vector & Vector::operator=(const Vector & v)
+{
+	int* temp = new int[v.size];
+
+	for (size_t i = 0; i < v.size; ++i)
+	{
+		temp[i] = v[i];
+	}
+	delete nums;
+
+	nums = temp;
+	size = v.size;
+
+	return *this;
 }
 /*
 Release dynamic memory
