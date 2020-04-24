@@ -29,7 +29,7 @@ int main()
 			std::move(game4);
 		}
 
-		unique_ptr<tictactoe> game = games&->end();
+		unique_ptr<tictactoe> game;
 
 		string player = "Y";
 
@@ -55,7 +55,7 @@ int main()
 			try
 			{
 				cin >> *game;
-				cout << *game;
+				cout << game;
 			}
 			catch (Error e)
 			{
