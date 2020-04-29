@@ -52,6 +52,40 @@ Vector & Vector::operator=(const Vector & v)
 
 	return *this;
 }
+
+/*
+Get thedynamic memory from v
+Get the size from v
+Point the v.nums to nullptr to take care of memory issues
+takes data 
+*/
+Vector::Vector(Vector && v)
+	: size{v.size}, nums{v.nums}
+{
+	v.size = 0;
+	v.nums = nullptr;
+}
+
+/*
+Deallocate original dynamic memory
+Get the dynamic memory from v
+Get the size from v
+Pont v.nums to nullptr
+Set size to 0
+*/
+Vector & Vector::operator=(Vector && v)
+{
+	delete nums;
+	nums = v.nums;
+	size = v.size;
+	v.nums = nullptr;
+	v.size = 0;
+
+	return *this;
+}
+
+
+
 /*
 Release dynamic memory
 Deallocate memmory
@@ -62,11 +96,19 @@ Vector::~Vector()
 	delete[] nums;
 }
 
-//=================
-//free function
+
 void use_vector()
 {
 	Vector* v1= new Vector(3);
 	delete v1;
 	v1 = nullptr;
 }
+// does not belong to class
+Vector get_vector()
+{
+	Vector v(3);
+	return v;
+}
+
+//=================
+//free function
