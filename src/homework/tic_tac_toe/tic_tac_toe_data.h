@@ -1,6 +1,8 @@
 //h
 #include"tic_tac_toe.h"
-
+#include"tic_tac_toe_3.h"
+#include"tic_tac_toe_4.h"
+#include"tic_tac_toe_manager.h"
 #include<fstream>
 
 #ifndef TICTACTOE_DATA_H
