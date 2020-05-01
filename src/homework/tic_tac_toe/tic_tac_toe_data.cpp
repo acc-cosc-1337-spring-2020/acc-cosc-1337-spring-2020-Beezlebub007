@@ -1,17 +1,18 @@
 #include "tic_tac_toe_data.h"
-
+#include "tic_tac_toe_3.h"
+#include "tic_tac_toe_4.h"
 //cpp
 
 void tictactoe_data::save_pegs(const std::vector<string>& pgs)
 {
 	std::ofstream file_out(file_name, std::ios_base::trunc);
-	for (auto pegs : pgs)
+	for (auto game : pgs)
 	{
 		for (auto c : pgs)
 		{
-			file_out << " ";
+			file_out << c;
 		}
-		file_out << pegs;
+		file_out << game;
 		file_out << "\n";
 	}
 	file_out.close();
@@ -19,7 +20,7 @@ void tictactoe_data::save_pegs(const std::vector<string>& pgs)
 
 std::vector<std::unique_ptr<tictactoe>> tictactoe_data::get_games()
 {
-	std::vector<tictactoe> boards;
+	std::vector<std::unique_ptr<tictactoe>>  boards;
 	string line;
 	vector<string> pegs;
 	
@@ -35,7 +36,7 @@ std::vector<std::unique_ptr<tictactoe>> tictactoe_data::get_games()
 				pegs.push_back(chstring);
 			}
 
-			string winner = get_winner();
+			string winner;
 			unique_ptr<tictactoe> board;
 			if (pegs.size() == 9)
 			{
@@ -45,10 +46,10 @@ std::vector<std::unique_ptr<tictactoe>> tictactoe_data::get_games()
 			{
 				board = make_unique<tictactoe4>(pegs, winner);
 			}
-			boards->push_back(std::move(board));
+			boards.push_back(board);
 		}
 		read_file.close();
 	}
 	
-	return std::vector<std::unique_ptr<tictactoe>>();
+	return boards;
 }

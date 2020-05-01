@@ -1,6 +1,7 @@
 #include "tic_tac_toe_manager.h"
 #include "tic_tac_toe_3.h"
 #include "tic_tac_toe_4.h"
+#include "tic_tac_toe_data.h"
 #include<iostream>
 #include<functional>
 #include <memory>
@@ -8,7 +9,8 @@ using std::cout; using std::cin; using std::string;
 
 int main()
 {
-	unique_ptr <TicTacToeManager> manager = make_unique<TicTacToeManager>();
+	tictactoe_data save_file;
+	unique_ptr <TicTacToeManager> manager = make_unique<TicTacToeManager>(save_file);
 	string cont;
 
 	do
