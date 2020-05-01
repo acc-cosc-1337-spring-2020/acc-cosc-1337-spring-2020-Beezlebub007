@@ -118,6 +118,36 @@ Release dynamic memory
 Deallocate memmory
 */
 
+/*
+Reserve space
+Initialize values beyond size to 0
+
+*/
+void Vector::Resize(size_t new_size)
+{
+	Reserve(new_size);
+
+	for (size_t i = size; i < new_size; ++i)
+	{
+		nums[i] = 0;
+	}
+
+}
+
+void Vector::Push_Back(int value)
+{
+	if (space == 0)
+	{
+		Reserve(RESERVE_DEFAULT_SIZE);
+	}
+	else if(size == space)
+	{
+		Reserve(space * RESERVE_DEFAULT_MULTIPLIER);
+	}
+	nums[size] = value;
+	++size;
+}
+
 Vector::~Vector()
 {
 	std::cout << "\nrelease memory\n";
