@@ -20,6 +20,7 @@ int main()
 	*/
 	//use_vector();
 	//Vector v1(3);
+	Vector v;
 	Vector v1 = get_vector();
 
 	return 0;

@@ -4,6 +4,10 @@
 Initialize nums to size dynamic array.
 Initialize each array element to 0.
 */
+Vector::Vector()
+	:size{0}, nums{nullptr}, space{0} // cant initialize int to 0
+{
+}
 Vector::Vector(size_t sz)
 	:size{sz}, nums{new int[sz]}, space{sz}
 {
