@@ -43,6 +43,19 @@ return a slef copy of Vector
 */
 Vector & Vector::operator=(const Vector & v)
 {
+	if (this == &v)//prevents self copy
+	{
+		return *this;
+	}
+	if (v.size <= space)
+	{
+		for (size_t i = 0; i < v.size; ++i)
+		{
+			nums[i] = v[i];
+		}
+		return *this;
+	}
+
 	int* temp = new int[v.size];
 
 	for (size_t i = 0; i < v.size; ++i)
