@@ -20,8 +20,14 @@ int main()
 	*/
 	//use_vector();
 	//Vector v1(3);
-	Vector v;
-	Vector v1 = get_vector();
+	std::vector<int> int_n;
+	std::vector<double> double_n;
+	Vector<int> v1(3);
+	v1 = get_vector();
+	for (size_t i = 0; i < v1.Size(); ++i)
+	{
+		std::cout << v1[i] << "\n";
+	}
 
 	return 0;
 }
