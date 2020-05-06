@@ -173,7 +173,13 @@ void Vector<T>::Push_Back(T value)
 	nums[size] = value;
 	++size;
 }
+template class Vector<int>;
+template class Vector<double>;
 
+/* 
+release dynamic memory
+deallocate memory
+*/
 template<typename T>
 Vector<T>::~Vector()
 {
